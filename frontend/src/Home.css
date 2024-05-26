@@ -1,0 +1,488 @@
+.navbar
+{
+    width: 100%;
+    background-color: #fafafa;
+    height: 80px;
+    box-shadow: 0px 2px 29px -8px #4e4d4d;
+}
+
+#btn2
+{
+    background-color: #0a0a0a;
+    color: #fafafa;
+    font-family: "Urbanist", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#btn1
+{
+    background-color: #E5700B;
+    color: #fafafa;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+}
+
+#mobile-view
+{
+    display: none;
+}
+
+.main1
+{
+    display: none;
+}
+
+.main2
+{
+    display: block;
+}
+
+#hero
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto 0px auto;
+}
+
+#find2
+{
+    margin-top: 30px;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 900;
+    font-size: 11rem;
+    text-align: center;
+    color: #9f9f9f86;
+}
+
+#sauce1
+{
+    color: #E5700B;
+}
+
+#pepper3
+{
+    margin-top: -153px;
+    margin-right: 948px;
+    transform: scaleX(-1) rotate(45deg);
+}
+
+#cabbage3
+{
+    margin-top: -60px;
+    margin-left: 402px;
+}
+
+#cabbage4
+{
+    margin-top: 90px;
+    margin-right: 600px;
+    filter: blur(3px);
+}
+
+#pepper4
+{
+    margin-top: -185px;
+    margin-right: -248px;
+    transform: scaleX(-1) rotate(45deg);
+}
+
+#hold-sha1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    margin: 40px auto 0px auto;
+}
+
+#shalaye1
+{
+    font-family: "Urbanist", sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.btn-hold2
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    margin: 30px auto 0px auto;
+}
+
+#btn5
+{
+    background-color: #0a0a0a;
+    color: #fafafa;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    border-radius: 0px;
+    padding: 13px 45px 13px 45px;
+    font-size: 20px;
+}
+
+#btn6
+{
+    background-color: #E5700B;
+    color: #fafafa;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    padding: 13px 45px 13px 45px;
+    border-radius: 0px;
+    font-size: 20px;
+}
+
+.text-hold1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+    font-family: "Urbanist", sans-serif;
+}
+
+.health1
+{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.with
+{
+    color: #F6B100;
+    font-size: 18px;
+}
+
+.img-hold1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 20px;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #0a0a0a;
+    height: 420px;
+    width: 90%;
+    margin: 50px auto 0px auto;
+    color: #fafafa;
+    font-family: "Urbanist", sans-serif;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+#foot-li
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+    padding-left: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.top1
+{
+    color: #fafafa;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#connect
+{
+    font-weight: 600;
+    font-family: 22px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 991px) {
+
+    .main2
+    {
+        display: none;
+    }
+
+    .main1
+    {
+        display: block;
+    }
+    #navbarTogglerDemo02
+    {
+        display: none;
+    }
+
+    #btna
+    {
+        color: #0a0a0a;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    #btnb
+    {
+        background-color: #fd941c;
+        color: #fafafa;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    
+    #mobile-view
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .btn-hold
+    {
+        display: flex;
+        gap: 5px;
+    }
+
+    #hero
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        margin: 50px auto 0px auto;
+    }
+
+    #cabbage
+    {
+        margin-top: 3.5rem;
+        margin-left: 5rem;
+    }
+
+
+    #find
+    {
+        font-family: "Urbanist", sans-serif;
+        color: #9F9F9F;
+        opacity: 50%;
+        font-size: 122px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 0;
+        line-height: 92.8%;
+        margin-top: -20px;
+    }
+
+    #find1
+    {
+        font-family: "Urbanist", sans-serif;
+        color: #9F9F9F;
+        font-size: 122px;
+        opacity: 50%;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 0;
+        line-height: 92.8%;
+        margin-top: -20px;
+    }
+
+    #sauce
+    {
+        font-family: "Urbanist", sans-serif;
+        color: #fd941c;
+        font-size: 122px;
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 0;
+        line-height: 92.8%;
+        margin-top: -5px;
+    }
+
+    #pepper
+    {
+        margin-top: -162px;
+        margin-right: -277px;
+    }
+
+    #pepper1
+    {
+        margin-top: -24px;
+        margin-right: 16px;
+        transform: rotate(40deg);
+    }
+
+    #cabbage1
+    {
+        margin-top: 54.5px;
+        margin-right: 144px;
+    }
+
+    #hold-sha
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; 
+        margin: 50px auto 0px auto;
+    }
+
+    #shalaye
+    {
+        font-size: 22px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 600;
+        text-align: center;
+        color: #0a0a0a;
+    }
+
+    .btn-hold1
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    #btn3
+    {
+        background-color: #fd941c;
+        color: #fafafa;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 10px 30px 10px 30px;
+        border-radius: 0px;
+    } 
+
+    #btn4
+    {
+        background-color: #0a0a0a;
+        color: #fafafa;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 10px 30px 10px 30px;
+        border-radius: 0px;
+    }
+
+    .text-hold
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .health
+    {
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 0px;
+    }
+
+    .with
+    {
+        font-family: "Urbanist", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 0px;
+        color: #F6B100;
+    }
+
+    .img-hold
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .footer
+    {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 20px;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+        background-color: #0a0a0a;
+        height: 400px;
+        width: 90%;
+        margin: 50px auto 0px auto;
+        color: #fafafa;
+        font-family: "Urbanist", sans-serif;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+
+    #foot-li
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        list-style-type: none;
+        padding-left: 10px;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        /* font-weight: 600; */
+    }
+
+    .top1
+    {
+        color: #fafafa;
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}

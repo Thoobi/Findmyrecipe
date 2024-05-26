@@ -1,13 +1,19 @@
-import { useState } from 'react'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css'
+import Home from './Home.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   console.log("Welcome to FindmySauce");
   return (
-    <div>
-      <h1>Welcome to find my sauce</h1>
-      <p>A project by Ola, Daniel, Mo</p>
+    <div id='like'>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+    
   )
 }
 
