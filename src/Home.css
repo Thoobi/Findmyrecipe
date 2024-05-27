@@ -117,7 +117,7 @@
     font-size: 11rem;
     text-align: center;
     color: #9f9f9f86;
-    animation: bounce 3s infinite;
+    animation: bounce 8s infinite;
 }
 
 #sauce1
@@ -244,7 +244,7 @@
     background-color: #0a0a0a;
     height: 420px;
     width: 90%;
-    margin: 50px auto 50px auto;
+    margin: 50px auto 0px auto;
     color: #fafafa;
     font-family: "Urbanist", sans-serif;
     border-radius: 15px;
@@ -512,7 +512,7 @@
         background-color: #0a0a0a;
         height: 400px;
         width: 90%;
-        margin: 50px auto 20px auto;
+        margin: 50px auto 0px auto;
         color: #fafafa;
         font-family: "Urbanist", sans-serif;
         border-radius: 15px;
@@ -530,7 +530,6 @@
         text-align: center;
         margin-top: 20px;
         font-size: 16px;
-        /* font-weight: 600; */
     }
 
     .top1

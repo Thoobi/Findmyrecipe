@@ -112,7 +112,7 @@ function Search()
                         </ul>
 
 
-                <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal show={showModal} onHide={handleCloseModal} className='mode'>
                     <Modal.Header closeButton>
                     <Modal.Title>Confirm Logout</Modal.Title>
                     </Modal.Header>

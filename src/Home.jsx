@@ -88,7 +88,7 @@ function Home ()
                         
                         <a className='top1' href='#navbar'>Back to the top</a>
                     </div>
-                
+                <br />
                 </main>
 
                 <main className='main2'>
@@ -138,7 +138,7 @@ function Home ()
                         
                         <a className='top1' href='#navbar'>Back to the top</a>
                     </div>
-                
+                <br />
                 </main>
         </>
     )

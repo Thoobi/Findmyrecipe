@@ -177,6 +177,12 @@ form
     margin-top: 20px;
 }
 
+.mode
+{
+    font-family: "Urbanist", sans-serif;
+    font-weight: 400;
+}
+
 
 /* Media query to show/hide elements based on screen size */
 @media (max-width: 991px) {
@@ -218,12 +224,6 @@ form
     {
         display: none;
     }
-    /* .mobile-menu
-    {
-        height: 200px;
-        background-color: #fd8c21;
-        display: flex;
-    } */
     .mobile-menu.show {
         height: 300px;
         background-color: #0a0a0a;
