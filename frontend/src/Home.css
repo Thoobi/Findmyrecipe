@@ -18,6 +18,10 @@
     padding-top: 8px;
     padding-bottom: 8px;
 }
+#btn2 > a{
+    text-decoration: none;
+    color: #fafafa;
+}
 
 #btn1
 {
@@ -30,6 +34,42 @@
     padding-top: 8px;
     padding-bottom: 8px;
     font-size: 18px;
+}
+
+#btn1 > a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+/*mobile style for navbar buttons*/
+#btna > a{
+    text-decoration: none;
+    color: #0a0a0a;
+}
+
+#btnb > a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+#btn3 > a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+#btn4 > a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+#btn5 > a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+#btn6 > a{
+    text-decoration: none;
+    color: #fafafa;
 }
 
 #mobile-view

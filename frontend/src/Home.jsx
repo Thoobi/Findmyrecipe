@@ -9,31 +9,32 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 function Home () 
 {
     return(
         <>
-            <nav id='navbar' class="navbar navbar-expand-lg">
-                    <div class="container-fluid" id='container'>
-                        <div class='mobile-nav' id='mobile-view'>
-                            <a class="navbar-brand d-lg-none" href="#">
+            <nav id='navbar' className="navbar navbar-expand-lg">
+                    <div className="container-fluid" id='container'>
+                        <div className='mobile-nav' id='mobile-view'>
+                            <a className="navbar-brand d-lg-none" href="#">
                                 <img src= {image} alt="logo" id="logo" width="144px" height="32px" />
                             </a>
                             <div className='btn-hold'>
-                                <button type="button" class="btn" id='btna'>Signup</button>
-                                <button type="button" class="btn" id='btnb'>Login</button>
+                                <button type="button" className="btn" id='btna'><Link to='/register'>Signup</Link></button>
+                                <button type="button" className="btn" id='btnb'><Link to='/login'>Login</Link></button>
                             </div>
                             
                         </div>
 
-                        <div class="navbar-collapse justify-content-between ps-4 pe-4"  id="navbarTogglerDemo02">
-                            <a class="navbar-brand d-none d-lg-block" href="#" id='log'>
-                                <img src= {image} alt="logo" class="d-inline-block align-text-top" width="200px" height="50px" id='logo'/>
+                        <div className="navbar-collapse justify-content-between ps-4 pe-4"  id="navbarTogglerDemo02">
+                            <a className="navbar-brand d-none d-lg-block" href="#" id='log'>
+                                <img src= {image} alt="logo" className="d-inline-block align-text-top" width="200px" height="50px" id='logo'/>
                             </a>
-                            <ul class="navbar-nav gap-3" id='lit'>
-                            <button type="button" class="btn" id='btn1'>Signup</button>
-                            <button type="button" class="btn" id='btn2'>Login</button>
+                            <ul className="navbar-nav gap-3" id='lit'>
+                            <button type="button" className="btn" id='btn1'><Link to='/register'>Signup</Link></button>
+                            <button type="button" className="btn" id='btn2'><Link to='/login'>Login</Link></button>
                             </ul>
                         </div>
                     </div>
@@ -54,8 +55,8 @@ function Home ()
                         </p>
                     </div>
                     <div className='btn-hold1'>
-                        <button type="button" class="btn" id='btn3'>Signup</button>
-                        <button type="button" class="btn" id='btn4'>Login</button>
+                        <button type="button" className="btn" id='btn3'><Link to='/register'>Signup</Link></button>
+                        <button type="button" className="btn" id='btn4'><Link to='/login'>Login</Link></button>
                     </div>
 
                     <div className='text-hold'>
@@ -104,8 +105,8 @@ function Home ()
                         </p>
                     </div>
                     <div className='btn-hold2'>
-                        <button type="button" class="btn" id='btn6'>Login</button>
-                        <button type="button" class="btn" id='btn5'>Signup</button>
+                        <button type="button" className="btn" id='btn6'><Link to='/login'>Login</Link></button>
+                        <button type="button" className="btn" id='btn5'><Link to='/register'>Signup</Link></button>
                     </div>
 
                     <div className='text-hold1'>

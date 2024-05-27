@@ -1,20 +1,36 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import './App.css'
-import Home from './Home.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import Home from "./Home.jsx";
+import Login from "./Login.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Register from "./Register.jsx";
 
 const App = () => {
-  console.log("Welcome to FindmySauce");
+  const [user, setUser] = useState(null);
+
+  const handleLogin = (formData) => {
+    console.log("User logged in:", formData);
+    setUser(formData.username);
+  };
+
+  const handleSignup = (formData) => {
+    console.log("User signed up:", formData);
+    setUser(formData.username);
+  };
+
+  // console.log("Welcome to FindmySauce");
   return (
-    <div id='like'>
+    <div id="like">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login onLogin={handleLogin} />} />
+          <Route path="/register" element={<Register onSignup={handleSignup} />} />
         </Routes>
       </BrowserRouter>
     </div>
-    
-  )
-}
+  );
+};
 
-export default App
+export default App;
