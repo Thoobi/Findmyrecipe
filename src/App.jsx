@@ -24,6 +24,7 @@ const App = () => {
   // console.log("Welcome to FindmySauce");
   return (
     <div id="like">
+      <Analytics/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
