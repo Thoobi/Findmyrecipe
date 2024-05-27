@@ -230,10 +230,9 @@
     background-color: #0a0a0a;
     height: 420px;
     width: 90%;
-    margin: 50px auto 0px auto;
+    margin: 50px auto 50px auto;
     color: #fafafa;
     font-family: "Urbanist", sans-serif;
-    margin-bottom: 20px;
     border-radius: 15px;
 }
 
@@ -496,10 +495,9 @@
         background-color: #0a0a0a;
         height: 400px;
         width: 90%;
-        margin: 50px auto 0px auto;
+        margin: 50px auto 20px auto;
         color: #fafafa;
         font-family: "Urbanist", sans-serif;
-        margin-bottom: 20px;
         border-radius: 15px;
     }
 

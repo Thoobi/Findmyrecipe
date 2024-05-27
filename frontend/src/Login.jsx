@@ -22,7 +22,7 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onLogin(formData);
-    navigate('/');
+    navigate('/Search');
   };
   return (
     <div className="container">
