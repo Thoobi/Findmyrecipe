@@ -28,7 +28,11 @@ const Register = ({ onSignup }) => {
       return;
     }
     onSignup(formData);
-    navigate('/');
+    setTimeout(() => {
+      navigate('/login');
+    },3000)
+    alert(`Account created successfully ✅✅`);
+    
   };
 
   return (
