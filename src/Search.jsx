@@ -132,9 +132,9 @@ function Search()
                     <br />
                         <form class="d-flex justify-content-center align-items-center" onSubmit={handleSubmit} id='gate'>
                             <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" />
-                            <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search' /></button>
+                            <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search'/></button>
                         </form>
-                        {input && <h5 className='result'>Results for {input}: </h5>}
+                        {input && <h5 className='result'>Search for {input}: </h5>}
                     {searchResults.length > 0 ? (
                         <div class="card" className="search-results">
                             {searchResults.map((result, index) => (
