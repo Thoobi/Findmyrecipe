@@ -6,6 +6,7 @@ import Login from "./Login.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Register from "./Register.jsx";
 import Search from "./Search.jsx"
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const [user, setUser] = useState(null);
