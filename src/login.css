@@ -103,10 +103,10 @@
    .form form{
       padding: 0;
       margin-top: 10%;
-      margin-left: 10%;
+      margin-left: 5%;
    }
 
    .form input{
-      width: 300px;
+      width: 380px;
    }
 }
