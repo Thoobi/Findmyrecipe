@@ -82,4 +82,31 @@
    text-decoration: underline;
    color: #E5700B;
    font-weight: 600;
+   text-align: center;
+}
+
+@media (max-width: 991px) {
+   .container{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .image-container{
+      display: none;
+      width: 0;
+   }
+
+   .login-img{
+      display: none;
+   }
+
+   .form form{
+      padding: 0;
+      margin-top: 10%;
+      margin-left: 10%;
+   }
+
+   .form input{
+      width: 300px;
+   }
 }
