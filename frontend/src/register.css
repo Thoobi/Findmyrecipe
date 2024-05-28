@@ -70,9 +70,37 @@
    font-family: "Urbanist", sans-serif;
    font-size: 18px;
    margin-top: 20px;
+   text-align: center;
 }
 
 .signup-form p > a{
    text-decoration: underline;
    color: #E5700B;
+}
+
+
+@media (max-width: 991px) {
+   .container{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .img-container{
+      display: none;
+      width: 0;
+   }
+
+   .signup-image{
+      display: none;
+   }
+
+   .signup-form{
+      /* padding: 0; */
+      margin-top: 10%;
+      /* margin-left: 10%; */
+   }
+
+   .signup-form input{
+      width: 380px;
+   }
 }

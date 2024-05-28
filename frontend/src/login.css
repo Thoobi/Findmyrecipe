@@ -68,9 +68,37 @@
    font-size: 18px;
    padding-left: 10%;
    margin-top: 20px;
+   text-align: center;
 }
 
 .form p > a{
    text-decoration: underline;
    color: #E5700B;
+}
+
+
+@media (max-width: 991px) {
+   .container{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .image-container{
+      display: none;
+      width: 0;
+   }
+
+   .login-img{
+      display: none;
+   }
+
+   .form form{
+      padding: 0;
+      margin-top: 10%;
+      margin-left: 10%;
+   }
+
+   .form input{
+      width: 350px;
+   }
 }
