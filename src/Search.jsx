@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import image from "./assets/findmysauce.svg"
 import { IoSearch } from "react-icons/io5";
 import { IoIosHome } from "react-icons/io";
-import { GoHistory } from "react-icons/go";
 import { IoLogOutSharp } from "react-icons/io5";
-import { RxHamburgerMenu } from "react-icons/rx";
-// import { useHistory } from 'react-router-dom';
+import { RxHamburgerMenu } from "react-icons/rx"
+import {useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
 
 
@@ -21,8 +20,8 @@ function Search()
         {
             searchResults = "";
         }
-        // const history = useHistory(); // Initialize useHistory
-        // console.log(input);
+
+        const navigate = useNavigate();
 
         const fetchData = (value) => 
         {
@@ -48,13 +47,11 @@ function Search()
         const handleChange = (value) =>
         {
             setInput(value);
-            // fetchData(value);
         }
 
         const [isMenuVisible, setMenuVisible] = useState(false);
         const toggleMenu = () => {
             setMenuVisible(!isMenuVisible);
-            console.log(true)
         };
         
         const handleLogoutClick = () => {
@@ -67,14 +64,12 @@ function Search()
     
         const handleConfirmLogout = () => {
             setShowModal(false);
-          // Add your logout logic here
-            console.log('User logged out');
-
-            // history.push('/login');
+            navigate('/');
         };
 
         const handleReload = () => {
-            navigate(location.pathname);
+            searchResults = "";
+            navigate('/search', { replace: true });
         };
 
 
@@ -97,10 +92,7 @@ function Search()
                             </a>
                             <ul class="navbar-nav" id='lit'>
                                 <li class="nav-item">
-                                    <a class="nav-link Active" aria-current="page" href="#"><IoIosHome className='home' /></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"><GoHistory className='home' /></a>
+                                    <a class="nav-link Active" aria-current="page" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>
@@ -112,10 +104,7 @@ function Search()
 
                 <ul class="d-none" className={`mobile-menu ${isMenuVisible ? 'show' : ''}`}>
                             <li className="nav-item">
-                                <a className="nav-link Active" aria-current="page" href="#" onClick={handleLogoutClick}><IoIosHome className='home' /></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#"><GoHistory className='home' /></a>
+                                <a className="nav-link Active" aria-current="page" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>
@@ -123,7 +112,7 @@ function Search()
                         </ul>
 
 
-                <Modal show={showModal} onHide={handleCloseModal}>
+                <Modal show={showModal} onHide={handleCloseModal} className='mode'>
                     <Modal.Header closeButton>
                     <Modal.Title>Confirm Logout</Modal.Title>
                     </Modal.Header>
@@ -140,11 +129,12 @@ function Search()
 
 
                 <main>
+                    <br />
                         <form class="d-flex justify-content-center align-items-center" onSubmit={handleSubmit} id='gate'>
                             <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" />
-                            <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search' /></button>
+                            <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search'/></button>
                         </form>
-                        {input && <h5 className='result'>Results for {input}: </h5>}
+                        {input && <h5 className='result'>Search for {input}: </h5>}
                     {searchResults.length > 0 ? (
                         <div class="card" className="search-results">
                             {searchResults.map((result, index) => (

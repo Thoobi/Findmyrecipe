@@ -22,7 +22,7 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onLogin(formData);
-    navigate('/');
+    navigate('/Search');
   };
   return (
     <div className="container">
@@ -59,6 +59,8 @@ const Login = ({ onLogin }) => {
 
         <p>
           Don&apos;t have an account? Sign up <Link to="/register">here</Link>
+          <br />
+          <Link to="/" className="backHome">Back to Home</Link>
         </p>
       </div>
     </div>

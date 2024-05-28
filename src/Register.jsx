@@ -28,7 +28,11 @@ const Register = ({ onSignup }) => {
       return;
     }
     onSignup(formData);
-    navigate('/');
+    setTimeout(() => {
+      navigate('/login');
+    },3000)
+    alert(`Account created successfully ✅✅`);
+    
   };
 
   return (
@@ -72,6 +76,7 @@ const Register = ({ onSignup }) => {
           <label>Confirm Password</label>
           <input
             type="password"
+            placeholder="Confirm your password"
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}

@@ -40,10 +40,12 @@
 .form input{
    width: 500px;
    height: 40px;
-   padding: 10px;
+   padding: 25px;
    border: 1.5px solid #0a0a0a;
    border-radius: 12px;
    outline: none;
+   font-size: 18px;
+   font-weight: 500;
 }
 
 .form input::placeholder{
@@ -53,7 +55,10 @@
 
 .login-btn{
    margin-top: 30px;
-   align-self: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
    color: #fafafa;
    background: #E5700B;
    width: 150px;
@@ -61,6 +66,9 @@
    border: 1px solid #E5700B;
    border-radius: 12px;
    font-family: "Urbanist", sans-serif;
+   padding: 23px 15px;
+   font-size: 18px;
+   font-weight: 600;
 }
 
 .form p{
@@ -68,37 +76,10 @@
    font-size: 18px;
    padding-left: 10%;
    margin-top: 20px;
-   text-align: center;
 }
 
 .form p > a{
    text-decoration: underline;
    color: #E5700B;
-}
-
-
-@media (max-width: 991px) {
-   .container{
-      display: flex;
-      flex-direction: column;
-   }
-
-   .image-container{
-      display: none;
-      width: 0;
-   }
-
-   .login-img{
-      display: none;
-   }
-
-   .form form{
-      padding: 0;
-      margin-top: 10%;
-      margin-left: 10%;
-   }
-
-   .form input{
-      width: 350px;
-   }
+   font-weight: 600;
 }
