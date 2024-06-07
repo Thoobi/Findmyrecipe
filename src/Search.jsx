@@ -68,8 +68,8 @@ function Search()
         };
 
         const handleReload = () => {
-            searchResults = "";
-            navigate('/search', { replace: true });
+            window.location.reload()
+            setSearchResults = ("");
         };
 
 
@@ -92,7 +92,7 @@ function Search()
                             </a>
                             <ul class="navbar-nav" id='lit'>
                                 <li class="nav-item">
-                                    <a class="nav-link Active" aria-current="page" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
+                                    <a class="nav-link" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>
@@ -104,7 +104,7 @@ function Search()
 
                 <ul class="d-none" className={`mobile-menu ${isMenuVisible ? 'show' : ''}`}>
                             <li className="nav-item">
-                                <a className="nav-link Active" aria-current="page" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
+                                <a className="nav-link" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>

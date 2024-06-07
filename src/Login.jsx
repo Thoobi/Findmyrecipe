@@ -30,8 +30,8 @@ const Login = ({ onLogin }) => {
         <img className="login-img" src={loginimage} alt="" />
       </div>
       <div className="form">
+      <h2 className="login-text">Login</h2>
         <form onSubmit={handleSubmit}>
-          <h2>Login</h2>
           <label htmlFor="">Username</label>
           <input
             type="text"

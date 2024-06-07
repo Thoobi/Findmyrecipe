@@ -116,7 +116,7 @@
     font-weight: 900;
     font-size: 11rem;
     text-align: center;
-    color: #9f9f9f86;
+    color: #0a0a0aa4;
     animation: bounce 8s infinite;
 }
 
@@ -136,14 +136,14 @@
 {
     margin-top: -60px;
     margin-left: 402px;
-    filter: blur(2px);
+    /* filter: blur(2px); */
 }
 
 #cabbage4
 {
     margin-top: 90px;
     margin-right: 600px;
-    filter: blur(2px);
+    /* filter: blur(2px); */
 }
 
 #pepper4
@@ -359,8 +359,8 @@
     #find
     {
         font-family: "Urbanist", sans-serif;
-        color: #9F9F9F;
-        opacity: 50%;
+        color: #0a0a0aa4;
+        /* opacity: 50%; */
         font-size: 122px;
         font-weight: 900;
         text-align: center;
@@ -372,9 +372,9 @@
     #find1
     {
         font-family: "Urbanist", sans-serif;
-        color: #9F9F9F;
+        color: #0a0a0aa4;
         font-size: 122px;
-        opacity: 50%;
+        /* opacity: 50%; */
         font-weight: 900;
         text-align: center;
         margin-bottom: 0;

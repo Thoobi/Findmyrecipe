@@ -22,7 +22,7 @@
    gap: 20px;
 }
 
-.form h2{
+.login-text{
    color: #E5700B;
    font-size: 30px;
    font-weight: 600;
@@ -38,7 +38,7 @@
 }
 
 .form input{
-   width: 500px;
+   width: 400px;
    height: 40px;
    padding: 25px;
    border: 1.5px solid #0a0a0a;
@@ -76,37 +76,75 @@
    font-size: 18px;
    padding-left: 10%;
    margin-top: 20px;
+   text-align: center;
 }
 
 .form p > a{
    text-decoration: underline;
    color: #E5700B;
-   font-weight: 600;
+   /* font-weight: 600; */
    text-align: center;
 }
 
 @media (max-width: 991px) {
+
    .container{
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
+      gap: 20px;
    }
 
-   .image-container{
+   .img-container{
       display: none;
-      width: 0;
    }
 
-   .login-img{
-      display: none;
+   .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   .login-text{
+      color: #E5700B;
+      font-size: 30px;
+      font-weight: 600;
+      font-family: "Urbanist", sans-serif;
+      text-align: center;
+      margin-top: 120px;
+      margin-bottom: 0px;
    }
 
    .form form{
-      padding: 0;
-      margin-top: 10%;
-      margin-left: 5%;
+      padding: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
    }
 
    .form input{
-      width: 380px;
+      width: 350px;
+   }
+
+   .form label{
+      font-family: "Urbanist", sans-serif;
+      color: #0a0a0a;
+      font-size: 18px;
+   }
+
+   .form input::placeholder{
+      font-family: "Urbanist", sans-serif;
+      color: #736e6e;
+      font-size: 18px;
+   }
+
+   .login-btn{
+      font-family: "Urbanist", sans-serif;
+      padding: 22px 15px;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 40px auto 30px auto;
    }
 }

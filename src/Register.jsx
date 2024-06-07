@@ -83,7 +83,7 @@ const Register = ({ onSignup }) => {
             required
           />
 
-          <button type="submit" className="signup-btn">
+          <button type="submit" className="signup-btn" id="sign-up">
             Sign Up
           </button>
         </form>

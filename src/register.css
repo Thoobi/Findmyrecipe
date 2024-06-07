@@ -85,27 +85,55 @@
 }
 
 @media (max-width: 991px) {
-   .container{
+   .main-container{
       display: flex;
       flex-direction: column;
    }
 
-   .img-container{
-      display: none;
-      width: 0;
-   }
-
-   .signup-image{
+   .image-container{
       display: none;
    }
 
    .signup-form{
-      /* padding: 0; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-top: 10%;
-      /* margin-left: 10%; */
+      margin-bottom: 0px;
+      padding-top: 0px;
+      padding-left: 0px;
    }
 
    .signup-form input{
-      width: 380px;
+      width: 350px;
+   }
+
+   .signup-form label{
+      font-family: "Urbanist", sans-serif;
+      color: #0a0a0a;
+      font-size: 18px;
+   }
+
+   .signup-form input::placeholder{
+      font-family: "Urbanist", sans-serif;
+      color: #736e6e;
+      font-size: 18px;
+   }
+
+   .signup-btn{
+      font-family: "Urbanist", sans-serif;
+      padding: 22px 15px;
+      font-size: 18px;
+      font-weight: 500;
+      margin: 30px auto 30px auto;
+   }
+   
+   .signup-form h2{
+      color: #E5700B;
+      font-size: 30px;
+      font-weight: 600;
+      font-family: "Urbanist", sans-serif;
+      text-align: center;
+      margin-bottom: 0px;
    }
 }
