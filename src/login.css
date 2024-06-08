@@ -16,10 +16,10 @@
 
 .form form{
    padding-left: 10%;
-   padding-top: 30%;
+   padding-top: 30px;
    display: flex;
    flex-direction: column;
-   gap: 20px;
+   gap: 10px;
 }
 
 .login-text{
@@ -28,7 +28,8 @@
    font-weight: 600;
    font-family: "Urbanist", sans-serif;
    text-align: center;
-   margin-bottom: 50px;
+   margin-top: 150px;
+   margin-bottom: 0px;
 }
 
 .form label{
@@ -53,8 +54,11 @@
    color: #736e6e;
 }
 
+.form input[type=text]{
+   margin-bottom: 20px;
+}
+
 .login-btn{
-   margin-top: 30px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -63,6 +67,7 @@
    background: #E5700B;
    width: 150px;
    height: 40px;
+   margin: 30px auto 0px auto;
    border: 1px solid #E5700B;
    border-radius: 12px;
    font-family: "Urbanist", sans-serif;
