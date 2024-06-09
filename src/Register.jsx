@@ -26,6 +26,8 @@ const Register = ({ onSignup }) => {
     });
   };
 
+  
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
@@ -34,7 +36,7 @@ const Register = ({ onSignup }) => {
       return;
     }
 
-    onSignup(formData);
+    
 
     const checkRes = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
       if (checkRes.data.length > 0) {
@@ -67,9 +69,7 @@ const Register = ({ onSignup }) => {
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
       }
-
-      
-
+      onSignup(formData);
 };
 
   return (
