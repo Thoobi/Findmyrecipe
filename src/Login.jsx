@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginimage from "./assets/login.png";
+import axios from 'axios';
 import "./login.css";
 
-const Login = ({ onLogin }) => {
+const Login = () => {
+  const [alertMessage, setAlertMessage] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -19,51 +22,82 @@ const Login = ({ onLogin }) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    onLogin(formData);
-    navigate('/Search');
+
+    try {
+      const response = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
+      const user = response.data[0];
+
+      if (user && user.password === formData.password) {
+        setAlertMessage('Login successful!');
+        setShowAlert(true);
+
+        setTimeout(() => {
+          setShowAlert(false);
+          navigate('/Search');
+        }, 3000);
+      } else {
+        setAlertMessage('Invalid email or password. Please try again.');
+        setShowAlert(true);
+        setTimeout(() => setShowAlert(false), 3000);
+      }
+    } catch (error) {
+      console.error('There was an error during login!', error);
+      setAlertMessage('There was an error during login. Please try again.');
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+    }
   };
+    // onLogin(formData);
+
   return (
-    <div className="container">
-      <div className="img-container">
-        <img className="login-img" src={loginimage} alt="" />
-      </div>
-      <div className="form">
-      <h2 className="login-text">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="">Username</label>
-          <input
-            type="text"
-            placeholder="Enter your username"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+    <>
+      {showAlert && (
+        <div className={`alert ${alertMessage.includes('success') ? 'alert-success' : 'alert-danger'}`} role="alert" id="alert">
+          {alertMessage}
+        </div>
+      )}
+      <div className="container">
+        <div className="img-container">
+          <img className="login-img" src={loginimage} alt="" />
+        </div>
+        <div className="form">
+        <h2 className="login-text">Login</h2>
+          <form onSubmit={handleSubmit}>
+          <label htmlFor="">E-mail:</label>
+              <input
+                type="mail"
+                placeholder="Enter your email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
 
-          <label htmlFor="">Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          
-          <button type="submit" className="login-btn">
-            Login
-          </button>
-        </form>
+            <label htmlFor="">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
 
-        <p>
-          Don&apos;t have an account? Sign up <Link to="/register">here</Link>
-          <br />
-          <Link to="/" className="backHome">Back to Home</Link>
-        </p>
+            <button type="submit" className="login-btn">
+              Login
+            </button>
+          </form>
+
+          <p>
+            Don&apos;t have an account? Sign up <Link to="/register">here</Link>
+            <br />
+            <Link to="/" className="backHome">Back to Home</Link>
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
