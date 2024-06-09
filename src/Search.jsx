@@ -7,10 +7,11 @@ import { IoLogOutSharp } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx"
 import {useNavigate } from "react-router-dom";
 import { Modal, Button } from 'react-bootstrap';
+import "./Login.jsx"
 
 
 
-function Search()
+const Search = ({ userName }) =>
 {
         const [input, setInput] = useState("");
         const [showModal, setShowModal] = useState(false);
@@ -130,7 +131,10 @@ function Search()
 
                 <main>
                     <br />
+                    
+                    <h5 id='name'>Hello, {userName}</h5>
                         <form class="d-flex justify-content-center align-items-center" onSubmit={handleSubmit} id='gate'>
+                        
                             <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" />
                             <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search'/></button>
                         </form>

@@ -4,14 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 import signupimage from "./assets/signup.png";
 import axios from 'axios';
 
-const Register = ({ onSignup}) => {
+const Register = ({ onSignup }) => {
   const [alertMessage, setAlertMessage] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [formData, setFormData] = useState({
-    fullname: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
+    
   });
 
   const navigate = useNavigate();
@@ -31,7 +33,7 @@ const Register = ({ onSignup}) => {
       setShowAlert(true);
       return;
     }
-    
+
     onSignup(formData);
 
     const checkRes = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
@@ -41,8 +43,14 @@ const Register = ({ onSignup}) => {
       return;
       }
 
+    // Add timestamp to the user data
+    const timestamp = new Date().toLocaleString();
+
+    // Add timestamp to the user data
+    const userData = { ...formData, signupDate: timestamp };
+
     try{
-      const res = await axios.post('http://localhost:5030/users', formData);
+      const res = await axios.post('http://localhost:5030/users', userData);
       console.log(res.data);
       
       setAlertMessage('Account created successfully!');
@@ -60,7 +68,7 @@ const Register = ({ onSignup}) => {
       setTimeout(() => setShowAlert(false), 3000);
       }
 
-    
+      
 
 };
 
@@ -78,25 +86,25 @@ const Register = ({ onSignup}) => {
         <div className="signup-form">
           <h2>Sign Up</h2>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="">Full Name:</label>
+            <label htmlFor="">First Name:</label>
             <input
               type="text"
-              placeholder="Enter your full name"
-              name="fullname"
-              value={formData.fullname}
+              placeholder="Enter your first name"
+              name="firstname"
+              value={formData.firstname}
               onChange={handleChange}
               required
             />
 
-            {/* <label htmlFor="">Username:</label>
+            <label htmlFor="">Last Name:</label>
             <input
               type="text"
-              placeholder="Enter your preferred username"
-              name="username"
-              value={formData.username}
+              placeholder="Enter your last name"
+              name="lastname"
+              value={formData.lastname}
               onChange={handleChange}
               required
-            /> */}
+            />
 
             <label htmlFor="">E-mail:</label>
             <input
@@ -133,7 +141,7 @@ const Register = ({ onSignup}) => {
             </button>
           </form>
 
-          <p>
+          <p id="ownAccount">
             Already have an account? Login <Link to="/login">here</Link>
           </p>
         </div>

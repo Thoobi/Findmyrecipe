@@ -4,7 +4,7 @@ import loginimage from "./assets/login.png";
 import axios from 'axios';
 import "./login.css";
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [alertMessage, setAlertMessage] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [formData, setFormData] = useState({
@@ -28,11 +28,15 @@ const Login = () => {
     try {
       const response = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
       const user = response.data[0];
+      onLogin(user);
+
 
       if (user && user.password === formData.password) {
-        setAlertMessage('Login successful!');
+        setAlertMessage(`Login successful ${user.firstname}!`);
         setShowAlert(true);
+        
 
+        
         setTimeout(() => {
           setShowAlert(false);
           navigate('/Search');
@@ -49,7 +53,7 @@ const Login = () => {
       setTimeout(() => setShowAlert(false), 3000);
     }
   };
-    // onLogin(formData);
+   
 
   return (
     <>

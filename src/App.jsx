@@ -9,19 +9,13 @@ import Search from "./Search.jsx"
 import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [userName, setUserName] = useState('');
 
-  const handleLogin = (formData) => {
-    console.log("User logged in:", formData);
-    setUser(formData.username);
+  const handleLogin = (name) => {
+    console.log("User logged in:", name);
+    setUserName(name.firstname);
   };
 
-  const handleSignup = (formData) => {
-    console.log("User signed up:", formData);
-    setUser(formData.username);
-  };
-
-  // console.log("Welcome to FindmySauce");
   return (
     <div id="like">
       <Analytics/>
@@ -29,8 +23,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
-          <Route path="/register" element={<Register onSignup={handleSignup} />} />
-          <Route path="/search" element={<Search />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/search" element={<Search userName={userName} />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,5 +1,6 @@
 .main-container{
    display: flex;
+   width: 100%;
    flex-direction: row;
 }
 
@@ -13,8 +14,7 @@
 }
 
 .signup-form{
-   padding-left: 5%;
-   padding-top: 5%;
+   margin: 40px auto 0px auto;
    display: flex;
    flex-direction: column;
 }
@@ -25,7 +25,7 @@
    font-weight: 600;
    font-family: "Urbanist", sans-serif;
    text-align: center;
-   margin-bottom: 40px;
+   margin-bottom: 20px;
 }
 
 .signup-form form{
@@ -97,6 +97,11 @@
    font-size: 20px;
    font-family: "Urbanist", sans-serif;
    font-weight: 600;
+}
+
+#ownAccount
+{
+   text-align: center;
 }
 
 @media (max-width: 991px) {

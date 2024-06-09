@@ -199,6 +199,11 @@ form input
     font-size: 18px;
 }
 
+#name
+{
+    color: #0a0a0a;
+    margin-left: 5%;
+}
 
 /* Media query to show/hide elements based on screen size */
 @media (max-width: 991px) {
