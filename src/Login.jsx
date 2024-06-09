@@ -24,14 +24,20 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    const upperCaseEmail = formData.email.toUpperCase();
+    
+    const submissionData = {
+                ...formData,
+                email: upperCaseEmail,
+            };
 
     try {
-      const response = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
+      const response = await axios.get(`http://localhost:5030/users?email=${submissionData.email}`);
       const user = response.data[0];
       onLogin(user);
 
 
-      if (user && user.password === formData.password) {
+      if (user && user.password === submissionData.password) {
         setAlertMessage(`Login successful ${user.firstname}!`);
         setShowAlert(true);
         

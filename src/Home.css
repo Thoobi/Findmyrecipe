@@ -4,6 +4,11 @@
     background-color: #fafafa;
     height: 80px;
     box-shadow: 0px 2px 29px -8px #4e4d4d;
+    
+}
+#navbar{
+    position: fixed;
+    z-index: 2;
 }
 
 #btn2
@@ -296,6 +301,11 @@
         display: none;
     }
 
+    #navbar
+    {
+        z-index: 2;
+    }
+
     .main1
     {
         display: block;
@@ -346,7 +356,7 @@
         align-items: center;
         flex-direction: column;
         width: 80%;
-        margin: 50px auto 0px auto;
+        margin: 150px auto 0px auto;
     }
 
     #cabbage

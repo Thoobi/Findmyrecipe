@@ -82,6 +82,7 @@
 .signup-form p > a{
    text-decoration: underline;
    color: #E5700B;
+   font-weight: 600;
 }
 
 #alert
@@ -89,7 +90,7 @@
    width: 40%;
    margin: 20px auto 0px auto;
    height: 80px;
-   z-index: -999;
+   z-index: 2;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -123,7 +124,9 @@
       padding-top: 0px;
       padding-left: 0px;
    }
-
+   form{
+      padding-top: 10px;
+   }
    .signup-form input{
       width: 350px;
    }
@@ -155,5 +158,20 @@
       font-family: "Urbanist", sans-serif;
       text-align: center;
       margin-bottom: 0px;
+   }
+
+   #alert
+   {
+      width: 40%;
+      margin: 20px auto 0px auto;
+      height: 100px;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Urbanist", sans-serif;
+      font-weight: 600;
    }
 }

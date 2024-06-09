@@ -1,5 +1,6 @@
 import './Search.css';
 import React, { useState } from 'react';
+import { FaUserNinja } from "react-icons/fa";
 import image from "./assets/findmysauce.svg"
 import { IoSearch } from "react-icons/io5";
 import { IoIosHome } from "react-icons/io";
@@ -130,12 +131,10 @@ const Search = ({ userName }) =>
 
 
                 <main>
-                    <br />
-                    
-                    <h5 id='name'>Hello, {userName}</h5>
+                    <h5 id='name'><FaUserNinja /> Hello, {userName}</h5>
                         <form class="d-flex justify-content-center align-items-center" onSubmit={handleSubmit} id='gate'>
                         
-                            <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" />
+                            <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" id='search-input' />
                             <button class="btn custom-toggler" type="submit" id='btn-1'><IoSearch className='search'/></button>
                         </form>
                         {input && <h5 className='result'>Search for {input}: </h5>}

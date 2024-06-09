@@ -30,6 +30,7 @@ const Register = ({ onSignup }) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+    
     if (formData.password !== formData.confirmPassword) {
       setAlertMessage("Passwords do not match!");
       setShowAlert(true);
@@ -48,8 +49,14 @@ const Register = ({ onSignup }) => {
     // Add timestamp to the user data
     const timestamp = new Date().toLocaleString();
 
+    const upperCaseEmail = formData.email.toUpperCase();
+    
+    const submissionData = {
+                ...formData,
+                email: upperCaseEmail,
+            };
     // Add timestamp to the user data
-    const userData = { ...formData, signupDate: timestamp };
+    const userData = { ...submissionData, signupDate: timestamp };
 
     try{
       const res = await axios.post('http://localhost:5030/users', userData);
