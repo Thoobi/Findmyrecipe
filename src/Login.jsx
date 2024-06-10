@@ -32,7 +32,7 @@ const Login = ({ onLogin }) => {
             };
 
     try {
-      const response = await axios.get(`http://localhost:5030/users?email=${submissionData.email}`);
+      const response = await axios.get(`http://localhost:5000/users?email=${submissionData.email}`);
       const user = response.data[0];
       onLogin(user);
 

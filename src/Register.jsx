@@ -37,15 +37,6 @@ const Register = ({ onSignup }) => {
       return;
     }
 
-    
-
-    const checkRes = await axios.get(`http://localhost:5030/users?email=${formData.email}`);
-      if (checkRes.data.length > 0) {
-      setAlertMessage('Account with this email already exists!');
-      setShowAlert(true);
-      return;
-      }
-
     // Add timestamp to the user data
     const timestamp = new Date().toLocaleString();
 
@@ -59,8 +50,15 @@ const Register = ({ onSignup }) => {
     const userData = { ...submissionData, signupDate: timestamp };
 
     try{
-      const res = await axios.post('http://localhost:5030/users', userData);
+      const res = await axios.post('http://localhost:5000/users', userData);
       console.log(res.data);
+
+      const checkRes = await axios.get(`http://localhost:5000/users?email=${formData.email}`);
+      if (checkRes.data.length > 0) {
+      setAlertMessage('Account with this email already exists!');
+      setShowAlert(true);
+      return;
+      }
       
       setAlertMessage('Account created successfully!');
       setShowAlert(true);
