@@ -69,7 +69,8 @@ const Search = ({ userName }) =>
             navigate('/');
         };
 
-        const handleReload = () => {
+        const handleReload = (e) => {
+            e.preventDefault();
             window.location.reload()
             setSearchResults = ("");
         };

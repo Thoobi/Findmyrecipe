@@ -72,9 +72,10 @@ const Register = ({ onSignup }) => {
       console.error('There was an error posting the data!', error);
       setAlertMessage('There was an error signing up. Please try again.');
       setShowAlert(true);
+      onSignup(formData);
       setTimeout(() => setShowAlert(false), 3000);
       }
-      onSignup(formData);
+      
 };
 
   return (
