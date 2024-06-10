@@ -53,7 +53,7 @@ const Register = ({ onSignup }) => {
       const res = await axios.post('http://localhost:5000/users', userData);
       console.log(res.data);
 
-      const checkRes = await axios.get(`http://localhost:5000/users?email=${formData.email}`);
+      const checkRes = await axios.get(`http://localhost:5000/users?email=${submissionData.email}`);
       if (checkRes.data.length > 0) {
       setAlertMessage('Account with this email already exists!');
       setShowAlert(true);
