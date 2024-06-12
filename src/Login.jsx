@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import loginimage from "./assets/login.png";
-import axios from 'axios';
 import "./login.css";
 
 const Login = ({ onLogin }) => {
@@ -24,42 +23,45 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+
     const upperCaseEmail = formData.email.toUpperCase();
-    
-    const submissionData = {
-                ...formData,
-                email: upperCaseEmail,
-            };
 
     try {
-      const response = await axios.get(`http://localhost:5000/users?email=${submissionData.email}`);
-      const user = response.data[0];
-      onLogin(user);
+      const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+      const user = existingUsers.find(
+      user => user.email.toUpperCase() === upperCaseEmail && user.password === formData.password
+      );
 
-
-      if (user && user.password === submissionData.password) {
+      if (/\s/.test(formData.password)) {
+        setAlertMessage('Password should not contain whitespace!');
+        setShowAlert(true);
+        return;
+      }
+      
+      if (user && user.password === formData.password) {
         setAlertMessage(`Login successful ${user.firstname}!`);
         setShowAlert(true);
-        
-
-        
         setTimeout(() => {
           setShowAlert(false);
           navigate('/Search');
         }, 3000);
-      } else {
+      } 
+      else {
         setAlertMessage('Invalid email or password. Please try again.');
         setShowAlert(true);
         setTimeout(() => setShowAlert(false), 3000);
       }
+      onLogin(user);
     } catch (error) {
       console.error('There was an error during login!', error);
       setAlertMessage('There was an error during login. Please try again.');
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
     }
+    
   };
-   
+
+  
 
   return (
     <>

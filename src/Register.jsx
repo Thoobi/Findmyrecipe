@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./register.css";
 import { Link, useNavigate } from "react-router-dom";
 import signupimage from "./assets/signup.png";
-import axios from 'axios';
 
 const Register = ({ onSignup }) => {
   const [alertMessage, setAlertMessage] = useState('');
@@ -30,6 +29,12 @@ const Register = ({ onSignup }) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
+
+    if (/\s/.test(formData.password)) {
+      setAlertMessage('Password should not contain whitespace!');
+      setShowAlert(true);
+      return;
+    }
     
     if (formData.password !== formData.confirmPassword) {
       setAlertMessage("Passwords do not match!");
@@ -37,34 +42,40 @@ const Register = ({ onSignup }) => {
       return;
     }
 
-    // Add timestamp to the user data
-    const timestamp = new Date().toLocaleString();
-
-    const upperCaseEmail = formData.email.toUpperCase();
-    
-    const submissionData = {
-                ...formData,
-                email: upperCaseEmail,
-            };
-    // Add timestamp to the user data
-    const userData = { ...submissionData, signupDate: timestamp };
-    
-    const checkRes = await axios.get(`http://localhost:5000/users?email=${submissionData.email}`);
-      if (checkRes.data.length > 0) {
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const existingUser = existingUsers.find(user => user.email === formData.email.toUpperCase());
+    if (existingUser) {
       setAlertMessage('Account with this email already exists!');
       setShowAlert(true);
       return;
-      }
+    }
+    const timestamp = new Date().toLocaleString();
+    const upperCaseEmail = formData.email.toUpperCase();
+
+    // Add new user to localStorage
+    const newUser = {
+      ...formData,
+      email: upperCaseEmail,
+      createdAt: timestamp
+    };
+    
 
     try{
-      const res = await axios.post('http://localhost:5000/users', userData);
-      console.log(res.data);
+      existingUsers.push(newUser);
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+      setFormData({
+        firstname: '',
+        lastname: '',
+        email: '',
+        password: '',
+        confirmPassword: ''
+      });
       setAlertMessage('Account created successfully!');
       setShowAlert(true);
       setTimeout(() => setShowAlert(false), 3000);
-      setTimeout(() => {
-        navigate('/login');
-      },3000);
+      // setTimeout(() => {
+      //   navigate('/login');
+      // },3000);
 
       } 
     catch (error) {

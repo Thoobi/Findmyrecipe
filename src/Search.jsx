@@ -17,7 +17,7 @@ const Search = ({ userName }) =>
         const [input, setInput] = useState("");
         const [showModal, setShowModal] = useState(false);
         let [searchResults, setSearchResults] = useState([]);
-        
+
         if(input === "")
         {
             searchResults = "";
@@ -106,13 +106,13 @@ const Search = ({ userName }) =>
                 </nav>  
 
                 <ul class="d-none" className={`mobile-menu ${isMenuVisible ? 'show' : ''}`}>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>
-                            </li>
-                        </ul>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#" onClick={handleReload}><IoIosHome className='home' /></a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#" onClick={handleLogoutClick}><IoLogOutSharp className='home' /></a>
+                    </li>
+                </ul>
 
 
                 <Modal show={showModal} onHide={handleCloseModal} className='mode'>
@@ -131,8 +131,8 @@ const Search = ({ userName }) =>
                 </Modal>
 
 
-                <main>
-                    <h5 id='name'><FaUserNinja /> Hello, {userName}</h5>
+                <main id='main'>
+                    <h5 id='name'><FaUserNinja id='user-icon' /> Hello {userName}</h5>
                         <form class="d-flex justify-content-center align-items-center" onSubmit={handleSubmit} id='gate'>
                         
                             <input class="form" type="search" value={input} onChange={(e) => handleChange(e.target.value)} placeholder="Search for meal e.g rice" aria-label="Search" id='search-input' />
