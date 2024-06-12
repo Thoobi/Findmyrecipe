@@ -94,10 +94,10 @@ function Home ()
                 <main className='main2'>
                     <div id='hero'>
                         <h1 id='find2'>findmy<span id='sauce1'>Sauce</span></h1>
-                        <img src= {pepper} alt="cabbage" width="100px" height="100px" id='pepper3'/>
-                        <img src= {fruitA} alt="cabbage" width="35px" height="35px" id='cabbage3'/>
-                        <img src= {fruitA} alt="cabbage" width="60px" height="60px" id='cabbage4'/>
-                        <img src= {pepper} alt="cabbage" width="300px" height="300px" id='pepper4'/>
+                        <img src= {pepper} alt="cabbage" width="100px" height="100px" loading='lazy' id='pepper3'/>
+                        <img src= {fruitA} alt="cabbage" width="35px" height="35px" loading='lazy' id='cabbage3'/>
+                        <img src= {fruitA} alt="cabbage" width="60px" height="60px" loading='lazy' id='cabbage4'/>
+                        <img src= {pepper} alt="cabbage" width="300px" height="300px" loading='lazy' id='pepper4'/>
                     </div>
                     <div id='hold-sha1'>
                         <p id='shalaye1'>
@@ -113,9 +113,9 @@ function Home ()
                         <h4 className='health1'>Healthy Recipes</h4>
                         <h5 className='with'>with features</h5>
                         <div className="img-hold1">
-                            <img src= {keto1} alt="cabbage" width="264px" height="273px" id='keto'/>
-                            <img src= {keto2} alt="cabbage" width="264px" height="273px" id='keto'/>
-                            <img src= {keto1} alt="cabbage" width="264px" height="273px" id='keto'/>
+                            <img src= {keto1} alt="cabbage" width="264px" height="273px" loading='lazy' id='keto'/>
+                            <img src= {keto2} alt="cabbage" width="264px" height="273px" loading='lazy' id='keto'/>
+                            <img src= {keto1} alt="cabbage" width="264px" height="273px" loading='lazy' id='keto'/>
                         </div>
                     </div>
                     <div id='hold-sha1'>
@@ -127,7 +127,7 @@ function Home ()
                         <h5 id='connect'>Connect with Us</h5>
                         <ul id='foot-li'>
                             <FaPhoneAlt className='phone' />
-                            <li>09012543241</li>
+                            <li>09000000000</li>
                             <FaInstagram className='ig' />
                             <li>@findmysauceNg</li>
                             <FaXTwitter className='tweet' />
@@ -136,7 +136,7 @@ function Home ()
                             <li>findmysauce@gmail.com</li>
                         </ul>
                         
-                        <a className='top1' href='#navbar'>Back to the top</a>
+                        <a className='top1' href='#'>Back to the top</a>
                     </div>
                 <br />
                 </main>
